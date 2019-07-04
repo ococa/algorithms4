@@ -16,7 +16,7 @@ public class Selection {
         SortTemplate.show(test);
     }
 
-    private static void sort(Comparable[] array) {
+    public static void sort(Comparable[] array) {
         int length = array.length;
         for (int i = 0; i < length; i++) {
             // 如果i+1到length-1中最小的数小于array[i];
@@ -27,6 +27,5 @@ public class Selection {
                 }
             }
         }
-
     }
 }

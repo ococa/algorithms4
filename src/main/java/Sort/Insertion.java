@@ -16,7 +16,7 @@ public class Insertion {
     }
 
     // 将array按照升序排列
-    private static void sort(Comparable[] array) {
+    public static void sort2(Comparable[] array) {
         int length = array.length;
         for (int i = 0; i < length; i++) {
             // 将第i个元素按顺序插入到i之前的元素中
@@ -25,8 +25,18 @@ public class Insertion {
                 // 将j之前的元素排序，这里选择快排
                 if (SortTemplate.isLess(array[j], array[j-1])) {
                     SortTemplate.exchange(array, j, j - 1);
-
                 }
+            }
+        }
+
+    }
+
+    public static void sort(Comparable[] array) {
+        int length = array.length;
+        for (int i = 0; i < length; i++) {
+            // 将第i个元素按顺序插入到i之前的元素中
+            for (int j = i; j > 0 && SortTemplate.isLess(array[j], array[j-1]) ; j--) {
+                    SortTemplate.exchange(array, j, j - 1);
             }
         }
 
